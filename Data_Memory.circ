@@ -57,18 +57,24 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   <circuit name="Data_Memory">
     <a name="circuit" val="Data_Memory"/>
     <a name="clabel" val="Data Memory"/>
-    <a name="clabelup" val="east"/>
-    <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="clabelup" val="north"/>
+    <a name="clabelfont" val="SansSerif bold 18"/>
     <appear>
       <path d="M456,400 Q451,391 445,400" fill="none" stroke="#808080" stroke-width="2"/>
       <rect fill="none" height="221" stroke="#000000" stroke-width="2" width="161" x="430" y="180"/>
-      <circ-port height="8" pin="250,160" width="8" x="426" y="236"/>
-      <circ-port height="8" pin="250,260" width="8" x="426" y="336"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="462" y="235">Address</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="459" y="335">Data_In</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="558" y="274">Data_Out</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="552" y="391">MemWr</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="505" y="391">MemRd</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="448" y="391">CLK</text>
+      <circ-port height="8" pin="250,160" width="8" x="426" y="226"/>
+      <circ-port height="8" pin="250,260" width="8" x="426" y="326"/>
       <circ-port height="8" pin="300,330" width="8" x="546" y="396"/>
       <circ-port height="8" pin="310,370" width="8" x="446" y="396"/>
-      <circ-port height="10" pin="570,230" width="10" x="585" y="285"/>
+      <circ-port height="10" pin="570,230" width="10" x="585" y="265"/>
       <circ-port height="8" pin="550,330" width="8" x="506" y="396"/>
-      <circ-anchor facing="east" height="6" width="6" x="587" y="287"/>
+      <circ-anchor facing="east" height="6" width="6" x="587" y="267"/>
     </appear>
     <wire from="(420,270)" to="(420,370)"/>
     <wire from="(260,250)" to="(350,250)"/>
@@ -85,15 +91,22 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(490,230)" to="(570,230)"/>
     <wire from="(380,270)" to="(380,330)"/>
     <wire from="(440,270)" to="(440,330)"/>
+    <comp lib="6" loc="(129,124)" name="Text"/>
+    <comp lib="0" loc="(300,330)" name="Pin">
+      <a name="label" val="Memory_Write"/>
+    </comp>
+    <comp lib="0" loc="(250,160)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="label" val="Address"/>
+    </comp>
     <comp lib="0" loc="(250,260)" name="Pin">
       <a name="width" val="32"/>
       <a name="label" val="Data_In"/>
     </comp>
-    <comp lib="0" loc="(300,330)" name="Pin">
-      <a name="label" val="Memory_Write"/>
-    </comp>
-    <comp lib="0" loc="(310,370)" name="Pin">
-      <a name="label" val="Clock"/>
+    <comp lib="0" loc="(350,350)" name="Constant"/>
+    <comp lib="0" loc="(550,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Memory_Read"/>
     </comp>
     <comp lib="4" loc="(490,230)" name="RAM">
       <a name="addrWidth" val="20"/>
@@ -106,14 +119,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="32"/>
       <a name="label" val="Data_Out"/>
     </comp>
-    <comp lib="0" loc="(350,350)" name="Constant"/>
-    <comp lib="0" loc="(250,160)" name="Pin">
-      <a name="width" val="20"/>
-      <a name="label" val="Address"/>
-    </comp>
-    <comp lib="0" loc="(550,330)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="label" val="Memory_Read"/>
+    <comp lib="0" loc="(310,370)" name="Pin">
+      <a name="label" val="Clock"/>
     </comp>
   </circuit>
 </project>
