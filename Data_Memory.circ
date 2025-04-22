@@ -134,12 +134,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </appear>
     <wire from="(420,270)" to="(420,370)"/>
     <wire from="(260,250)" to="(350,250)"/>
-    <wire from="(260,160)" to="(260,230)"/>
-    <wire from="(260,230)" to="(350,230)"/>
+    <wire from="(320,230)" to="(350,230)"/>
     <wire from="(350,350)" to="(400,350)"/>
     <wire from="(260,250)" to="(260,260)"/>
     <wire from="(440,330)" to="(550,330)"/>
     <wire from="(300,330)" to="(380,330)"/>
+    <wire from="(260,160)" to="(260,240)"/>
     <wire from="(250,260)" to="(260,260)"/>
     <wire from="(250,160)" to="(260,160)"/>
     <wire from="(310,370)" to="(420,370)"/>
@@ -147,20 +147,29 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(490,230)" to="(570,230)"/>
     <wire from="(380,270)" to="(380,330)"/>
     <wire from="(440,270)" to="(440,330)"/>
+    <wire from="(260,240)" to="(300,240)"/>
+    <comp lib="0" loc="(310,370)" name="Pin">
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="0" loc="(250,160)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="label" val="Address"/>
+    </comp>
     <comp lib="0" loc="(570,230)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="32"/>
       <a name="label" val="Data_Out"/>
     </comp>
-    <comp lib="0" loc="(310,370)" name="Pin">
-      <a name="label" val="Clock"/>
+    <comp lib="0" loc="(350,350)" name="Constant"/>
+    <comp lib="0" loc="(550,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Memory_Read"/>
     </comp>
     <comp lib="0" loc="(250,260)" name="Pin">
       <a name="width" val="32"/>
       <a name="label" val="Data_In"/>
     </comp>
-    <comp lib="0" loc="(350,350)" name="Constant"/>
     <comp lib="4" loc="(490,230)" name="RAM">
       <a name="addrWidth" val="20"/>
       <a name="dataWidth" val="32"/>
@@ -170,13 +179,40 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="Memory_Write"/>
     </comp>
     <comp lib="6" loc="(129,124)" name="Text"/>
-    <comp lib="0" loc="(250,160)" name="Pin">
-      <a name="width" val="20"/>
-      <a name="label" val="Address"/>
-    </comp>
-    <comp lib="0" loc="(550,330)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="label" val="Memory_Read"/>
+    <comp lib="0" loc="(300,240)" name="Splitter">
+      <a name="incoming" val="32"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+      <a name="bit8" val="0"/>
+      <a name="bit9" val="0"/>
+      <a name="bit10" val="0"/>
+      <a name="bit11" val="0"/>
+      <a name="bit12" val="0"/>
+      <a name="bit13" val="0"/>
+      <a name="bit14" val="0"/>
+      <a name="bit15" val="0"/>
+      <a name="bit16" val="0"/>
+      <a name="bit17" val="0"/>
+      <a name="bit18" val="0"/>
+      <a name="bit19" val="0"/>
+      <a name="bit20" val="1"/>
+      <a name="bit21" val="1"/>
+      <a name="bit22" val="1"/>
+      <a name="bit23" val="1"/>
+      <a name="bit24" val="1"/>
+      <a name="bit25" val="1"/>
+      <a name="bit26" val="1"/>
+      <a name="bit27" val="1"/>
+      <a name="bit28" val="1"/>
+      <a name="bit29" val="1"/>
+      <a name="bit30" val="1"/>
+      <a name="bit31" val="1"/>
     </comp>
   </circuit>
 </project>
