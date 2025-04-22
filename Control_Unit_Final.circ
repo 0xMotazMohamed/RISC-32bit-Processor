@@ -77,10 +77,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#تجميعة Control/PC Control.circ" name="7"/>
-  <lib desc="file#تجميعة Control/Storage Control.circ" name="8"/>
+  <lib desc="file#PC Control.circ" name="7"/>
+  <lib desc="file#Storage Control.circ" name="8"/>
   <lib desc="file#Op_Control.circ" name="9"/>
-  <main name="main"/>
+  <main name="Control Signal Unit"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -113,8 +113,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="main">
-    <a name="circuit" val="main"/>
+  <circuit name="Control Signal Unit">
+    <a name="circuit" val="Control Signal Unit"/>
     <a name="clabel" val="Control Unit"/>
     <a name="clabelup" val="north"/>
     <a name="clabelfont" val="SansSerif bold 20"/>
@@ -142,6 +142,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <circ-anchor facing="east" height="6" width="6" x="267" y="217"/>
     </appear>
     <wire from="(310,120)" to="(340,120)"/>
+    <wire from="(150,370)" to="(210,370)"/>
     <wire from="(190,210)" to="(190,220)"/>
     <wire from="(310,410)" to="(360,410)"/>
     <wire from="(310,350)" to="(360,350)"/>
@@ -150,25 +151,14 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(150,220)" to="(150,370)"/>
     <wire from="(190,210)" to="(200,210)"/>
     <wire from="(280,310)" to="(360,310)"/>
+    <wire from="(210,370)" to="(220,370)"/>
     <wire from="(150,100)" to="(220,100)"/>
-    <wire from="(150,370)" to="(220,370)"/>
     <wire from="(150,100)" to="(150,220)"/>
     <wire from="(150,220)" to="(190,220)"/>
     <wire from="(320,270)" to="(360,270)"/>
     <wire from="(320,250)" to="(360,250)"/>
     <wire from="(320,200)" to="(360,200)"/>
     <wire from="(320,170)" to="(360,170)"/>
-    <comp lib="0" loc="(360,310)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(100,220)" name="Pin">
-      <a name="width" val="6"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="OP6"/>
-    </comp>
-    <comp lib="8" loc="(320,170)" name="Storage Control Unit"/>
     <comp lib="0" loc="(360,170)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -179,14 +169,27 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="9" loc="(310,350)" name="Op_Control"/>
-    <comp lib="0" loc="(360,410)" name="Pin">
+    <comp lib="0" loc="(360,270)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="7" loc="(310,80)" name="J-Branch"/>
-    <comp lib="0" loc="(360,270)" name="Pin">
+    <comp lib="0" loc="(360,310)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(100,220)" name="Pin">
+      <a name="width" val="6"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="OP6"/>
+    </comp>
+    <comp lib="0" loc="(340,120)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(360,410)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
@@ -196,22 +199,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(340,120)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="labelloc" val="east"/>
-    </comp>
+    <comp lib="7" loc="(310,80)" name="J-Branch"/>
     <comp lib="0" loc="(360,200)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-  </circuit>
-  <circuit name="f">
-    <a name="circuit" val="f"/>
-    <a name="clabel" val=""/>
-    <a name="clabelup" val="east"/>
-    <a name="clabelfont" val="SansSerif plain 12"/>
-    <comp loc="(340,200)" name="main"/>
+    <comp lib="8" loc="(320,170)" name="Storage Control Unit"/>
+    <comp lib="9" loc="(310,350)" name="Op_Control"/>
   </circuit>
 </project>
