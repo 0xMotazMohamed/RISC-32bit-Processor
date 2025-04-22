@@ -130,7 +130,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <circ-port height="10" pin="540,590" width="10" x="225" y="195"/>
       <circ-port height="10" pin="400,520" width="10" x="225" y="185"/>
       <circ-port height="8" pin="220,410" width="8" x="166" y="326"/>
-      <circ-port height="8" pin="460,520" width="8" x="166" y="336"/>
       <circ-anchor facing="east" height="6" width="6" x="227" y="237"/>
     </appear>
     <wire from="(250,420)" to="(310,420)"/>
@@ -237,10 +236,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="6" loc="(349,602)" name="Text">
       <a name="text" val="BGE"/>
     </comp>
-    <comp lib="0" loc="(460,520)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-    </comp>
     <comp lib="3" loc="(210,580)" name="Comparator">
       <a name="width" val="32"/>
       <a name="mode" val="unsigned"/>
@@ -248,6 +243,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp loc="(350,120)" name="Logic unit">
       <a name="label" val="Logic unit"/>
       <a name="labelfont" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(460,520)" name="Ground">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="6" loc="(410,691)" name="Text">
       <a name="text" val="BGEU"/>
