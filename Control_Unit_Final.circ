@@ -124,7 +124,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="239" y="153">MemRd</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="232" y="171">MemtoReg</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="233" y="193">MemWr</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="230" y="294">AluSrc</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="238" y="294">AluSrc</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="232" y="273">Regwrite</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="233" y="254">RegSrc</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="215" y="313">ExOp</text>
@@ -149,8 +149,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(280,300)" to="(280,310)"/>
     <wire from="(100,220)" to="(150,220)"/>
     <wire from="(150,220)" to="(150,370)"/>
-    <wire from="(190,210)" to="(200,210)"/>
     <wire from="(280,310)" to="(360,310)"/>
+    <wire from="(190,210)" to="(200,210)"/>
     <wire from="(210,370)" to="(220,370)"/>
     <wire from="(150,100)" to="(220,100)"/>
     <wire from="(150,100)" to="(150,220)"/>
@@ -164,23 +164,19 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="OP6"/>
     </comp>
-    <comp lib="0" loc="(360,200)" name="Pin">
+    <comp lib="0" loc="(360,250)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
     <comp lib="7" loc="(310,80)" name="J-Branch"/>
-    <comp lib="0" loc="(360,420)" name="Pin">
+    <comp lib="0" loc="(340,120)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(360,170)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(360,310)" name="Pin">
+    <comp lib="8" loc="(320,170)" name="Storage Control Unit"/>
+    <comp lib="0" loc="(360,200)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
@@ -190,22 +186,26 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="9" loc="(310,350)" name="Op_Control"/>
     <comp lib="0" loc="(360,270)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="8" loc="(320,170)" name="Storage Control Unit"/>
-    <comp lib="0" loc="(360,250)" name="Pin">
+    <comp lib="0" loc="(360,420)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(340,120)" name="Pin">
+    <comp lib="0" loc="(360,310)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="0" loc="(360,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="9" loc="(310,350)" name="Op_Control"/>
   </circuit>
 </project>
