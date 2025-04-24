@@ -390,6 +390,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(810,130)" to="(810,170)"/>
     <wire from="(300,490)" to="(320,490)"/>
     <wire from="(300,530)" to="(320,530)"/>
+    <wire from="(270,380)" to="(290,380)"/>
     <wire from="(330,320)" to="(350,320)"/>
     <wire from="(740,160)" to="(770,160)"/>
     <wire from="(600,60)" to="(630,60)"/>
@@ -434,7 +435,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(630,110)" to="(650,110)"/>
     <wire from="(220,720)" to="(310,720)"/>
     <wire from="(450,250)" to="(610,250)"/>
-    <wire from="(330,370)" to="(350,370)"/>
     <wire from="(600,190)" to="(630,190)"/>
     <wire from="(610,200)" to="(640,200)"/>
     <wire from="(520,80)" to="(540,80)"/>
@@ -481,6 +481,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(450,140)" to="(450,250)"/>
     <wire from="(560,270)" to="(560,750)"/>
     <wire from="(360,530)" to="(380,530)"/>
+    <wire from="(330,380)" to="(350,380)"/>
     <wire from="(600,80)" to="(630,80)"/>
     <wire from="(610,90)" to="(640,90)"/>
     <wire from="(500,20)" to="(500,190)"/>
@@ -527,7 +528,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(640,300)" to="(660,300)"/>
     <wire from="(320,170)" to="(350,170)"/>
     <wire from="(750,90)" to="(770,90)"/>
-    <wire from="(270,370)" to="(290,370)"/>
     <wire from="(330,270)" to="(350,270)"/>
     <wire from="(620,150)" to="(650,150)"/>
     <wire from="(350,610)" to="(350,720)"/>
@@ -565,13 +565,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="32"/>
       <a name="label" val="SEQ / SEQI"/>
     </comp>
+    <comp lib="0" loc="(330,380)" name="Bit Extender">
+      <a name="in_width" val="1"/>
+      <a name="out_width" val="32"/>
+    </comp>
     <comp lib="1" loc="(800,170)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(330,370)" name="Bit Extender">
-      <a name="in_width" val="1"/>
-      <a name="out_width" val="32"/>
     </comp>
     <comp lib="0" loc="(300,530)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -601,10 +601,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="32"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Rs"/>
-    </comp>
-    <comp lib="0" loc="(350,370)" name="Tunnel">
-      <a name="width" val="32"/>
-      <a name="label" val="SLTU / SLTIU"/>
     </comp>
     <comp lib="0" loc="(100,200)" name="Pin">
       <a name="width" val="32"/>
@@ -766,6 +762,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(350,170)" name="Tunnel">
       <a name="width" val="32"/>
       <a name="label" val="SUB"/>
+    </comp>
+    <comp lib="0" loc="(350,380)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="SLTU / SLTIU"/>
     </comp>
   </circuit>
   <circuit name="Logic unit">
@@ -1034,7 +1034,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(140,400)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="32"/>
-      <a name="label" val="ROR /  RORI"/>
+      <a name="label" val="ROR / RORI"/>
     </comp>
     <comp lib="0" loc="(120,510)" name="Splitter">
       <a name="fanout" val="4"/>
