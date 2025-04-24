@@ -116,27 +116,34 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <appear>
-      <rect fill="none" height="90" stroke="#000000" stroke-width="2" width="92" x="160" y="150"/>
+      <rect fill="none" height="110" stroke="#000000" stroke-width="2" width="100" x="160" y="130"/>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="185" y="174">Imm16</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="181" y="223">ImmU</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="180" y="204">ImmL</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="190" y="236">S</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="229" y="236">Ext</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="221" y="192">Extender</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="231" y="192">Extender</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="235" y="144">Ext-Pc</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="181" y="145">Pc+1</text>
       <circ-port height="8" pin="480,290" width="8" x="226" y="236"/>
-      <circ-port height="10" pin="540,240" width="10" x="245" y="185"/>
+      <circ-port height="10" pin="540,240" width="10" x="255" y="185"/>
       <circ-port height="8" pin="230,160" width="8" x="156" y="166"/>
       <circ-port height="8" pin="280,320" width="8" x="186" y="236"/>
       <circ-port height="8" pin="160,340" width="8" x="156" y="216"/>
       <circ-port height="8" pin="150,260" width="8" x="156" y="196"/>
-      <circ-anchor facing="east" height="6" width="6" x="247" y="187"/>
+      <circ-port height="8" pin="260,100" width="8" x="156" y="136"/>
+      <circ-port height="10" pin="540,130" width="10" x="255" y="135"/>
+      <circ-anchor facing="east" height="6" width="6" x="257" y="187"/>
     </appear>
     <wire from="(270,220)" to="(270,290)"/>
+    <wire from="(330,130)" to="(380,130)"/>
     <wire from="(450,250)" to="(450,260)"/>
+    <wire from="(420,130)" to="(540,130)"/>
     <wire from="(450,210)" to="(450,230)"/>
     <wire from="(160,260)" to="(160,280)"/>
     <wire from="(490,260)" to="(490,290)"/>
     <wire from="(230,160)" to="(270,160)"/>
+    <wire from="(330,100)" to="(330,130)"/>
     <wire from="(300,230)" to="(300,320)"/>
     <wire from="(420,260)" to="(450,260)"/>
     <wire from="(450,250)" to="(480,250)"/>
@@ -157,8 +164,19 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(150,260)" to="(160,260)"/>
     <wire from="(350,210)" to="(350,260)"/>
     <wire from="(200,290)" to="(270,290)"/>
-    <comp lib="2" loc="(510,240)" name="Multiplexer">
+    <wire from="(260,100)" to="(330,100)"/>
+    <comp lib="0" loc="(150,260)" name="Pin">
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="ImmL"/>
+    </comp>
+    <comp lib="0" loc="(540,130)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
       <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="PC_Extended"/>
+      <a name="labelloc" val="north"/>
     </comp>
     <comp lib="0" loc="(280,320)" name="Pin">
       <a name="tristate" val="false"/>
@@ -169,26 +187,46 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="ImmU"/>
     </comp>
-    <comp lib="0" loc="(480,290)" name="Pin">
+    <comp lib="0" loc="(540,240)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="Extender_Op"/>
+      <a name="label" val="Immediate"/>
+      <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(150,260)" name="Pin">
-      <a name="width" val="5"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="ImmL"/>
+    <comp lib="0" loc="(420,130)" name="Bit Extender">
+      <a name="in_width" val="20"/>
+      <a name="out_width" val="32"/>
     </comp>
     <comp lib="0" loc="(420,260)" name="Bit Extender">
       <a name="in_width" val="16"/>
       <a name="out_width" val="32"/>
       <a name="type" val="sign"/>
     </comp>
-    <comp lib="2" loc="(320,210)" name="Multiplexer">
-      <a name="width" val="16"/>
-    </comp>
     <comp lib="0" loc="(420,210)" name="Bit Extender">
       <a name="in_width" val="16"/>
       <a name="out_width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(230,160)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Imm16"/>
+    </comp>
+    <comp lib="0" loc="(260,100)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="PC+1"/>
+    </comp>
+    <comp lib="0" loc="(480,290)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Extender_Op"/>
+    </comp>
+    <comp lib="2" loc="(510,240)" name="Multiplexer">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="2" loc="(320,210)" name="Multiplexer">
+      <a name="width" val="16"/>
     </comp>
     <comp lib="0" loc="(200,290)" name="Splitter">
       <a name="facing" val="west"/>
@@ -209,19 +247,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit13" val="1"/>
       <a name="bit14" val="1"/>
       <a name="bit15" val="1"/>
-    </comp>
-    <comp lib="0" loc="(540,240)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Immediate"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(230,160)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Imm16"/>
     </comp>
   </circuit>
 </project>
