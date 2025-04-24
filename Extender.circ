@@ -116,33 +116,101 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <appear>
-      <rect fill="none" height="40" stroke="#000000" stroke-width="2" width="40" x="160" y="150"/>
-      <circ-port height="8" pin="190,210" width="8" x="156" y="166"/>
-      <circ-port height="8" pin="350,290" width="8" x="176" y="186"/>
-      <circ-port height="10" pin="410,240" width="10" x="195" y="165"/>
-      <circ-anchor facing="east" height="6" width="6" x="197" y="167"/>
+      <rect fill="none" height="90" stroke="#000000" stroke-width="2" width="92" x="160" y="150"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="185" y="174">Imm16</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="181" y="223">ImmU</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="180" y="204">ImmL</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="190" y="236">S</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="229" y="236">Ext</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="221" y="192">Extender</text>
+      <circ-port height="8" pin="480,290" width="8" x="226" y="236"/>
+      <circ-port height="10" pin="540,240" width="10" x="245" y="185"/>
+      <circ-port height="8" pin="230,160" width="8" x="156" y="166"/>
+      <circ-port height="8" pin="280,320" width="8" x="186" y="236"/>
+      <circ-port height="8" pin="160,340" width="8" x="156" y="216"/>
+      <circ-port height="8" pin="150,260" width="8" x="156" y="196"/>
+      <circ-anchor facing="east" height="6" width="6" x="247" y="187"/>
     </appear>
-    <wire from="(190,210)" to="(220,210)"/>
-    <wire from="(220,260)" to="(250,260)"/>
-    <wire from="(220,210)" to="(250,210)"/>
-    <wire from="(290,260)" to="(320,260)"/>
-    <wire from="(320,250)" to="(350,250)"/>
-    <wire from="(290,210)" to="(320,210)"/>
-    <wire from="(320,230)" to="(350,230)"/>
-    <wire from="(380,240)" to="(410,240)"/>
-    <wire from="(320,250)" to="(320,260)"/>
-    <wire from="(320,210)" to="(320,230)"/>
-    <wire from="(220,210)" to="(220,260)"/>
-    <wire from="(350,290)" to="(360,290)"/>
-    <wire from="(360,260)" to="(360,290)"/>
-    <comp lib="0" loc="(350,290)" name="Pin">
+    <wire from="(270,220)" to="(270,290)"/>
+    <wire from="(450,250)" to="(450,260)"/>
+    <wire from="(450,210)" to="(450,230)"/>
+    <wire from="(160,260)" to="(160,280)"/>
+    <wire from="(490,260)" to="(490,290)"/>
+    <wire from="(230,160)" to="(270,160)"/>
+    <wire from="(300,230)" to="(300,320)"/>
+    <wire from="(420,260)" to="(450,260)"/>
+    <wire from="(450,250)" to="(480,250)"/>
+    <wire from="(420,210)" to="(450,210)"/>
+    <wire from="(450,230)" to="(480,230)"/>
+    <wire from="(510,240)" to="(540,240)"/>
+    <wire from="(320,210)" to="(350,210)"/>
+    <wire from="(350,260)" to="(380,260)"/>
+    <wire from="(350,210)" to="(380,210)"/>
+    <wire from="(270,200)" to="(290,200)"/>
+    <wire from="(270,220)" to="(290,220)"/>
+    <wire from="(280,320)" to="(300,320)"/>
+    <wire from="(270,160)" to="(270,200)"/>
+    <wire from="(160,280)" to="(180,280)"/>
+    <wire from="(160,340)" to="(180,340)"/>
+    <wire from="(180,290)" to="(180,340)"/>
+    <wire from="(480,290)" to="(490,290)"/>
+    <wire from="(150,260)" to="(160,260)"/>
+    <wire from="(350,210)" to="(350,260)"/>
+    <wire from="(200,290)" to="(270,290)"/>
+    <comp lib="2" loc="(510,240)" name="Multiplexer">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(280,320)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="ImmSelect"/>
+    </comp>
+    <comp lib="0" loc="(160,340)" name="Pin">
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="ImmU"/>
+    </comp>
+    <comp lib="0" loc="(480,290)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="Extender_Op"/>
     </comp>
-    <comp lib="2" loc="(380,240)" name="Multiplexer">
-      <a name="width" val="32"/>
+    <comp lib="0" loc="(150,260)" name="Pin">
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="ImmL"/>
     </comp>
-    <comp lib="0" loc="(410,240)" name="Pin">
+    <comp lib="0" loc="(420,260)" name="Bit Extender">
+      <a name="in_width" val="16"/>
+      <a name="out_width" val="32"/>
+      <a name="type" val="sign"/>
+    </comp>
+    <comp lib="2" loc="(320,210)" name="Multiplexer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(420,210)" name="Bit Extender">
+      <a name="in_width" val="16"/>
+      <a name="out_width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(200,290)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="incoming" val="16"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="bit10" val="1"/>
+      <a name="bit11" val="1"/>
+      <a name="bit12" val="1"/>
+      <a name="bit13" val="1"/>
+      <a name="bit14" val="1"/>
+      <a name="bit15" val="1"/>
+    </comp>
+    <comp lib="0" loc="(540,240)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="32"/>
@@ -150,20 +218,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="Immediate"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(290,210)" name="Bit Extender">
-      <a name="in_width" val="16"/>
-      <a name="out_width" val="32"/>
-    </comp>
-    <comp lib="0" loc="(190,210)" name="Pin">
+    <comp lib="0" loc="(230,160)" name="Pin">
       <a name="width" val="16"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="Immediate"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(290,260)" name="Bit Extender">
-      <a name="in_width" val="16"/>
-      <a name="out_width" val="32"/>
-      <a name="type" val="sign"/>
+      <a name="label" val="Imm16"/>
     </comp>
   </circuit>
 </project>
