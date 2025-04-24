@@ -121,11 +121,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <appear>
-      <rect fill="#ffffff" height="25" stroke="#000000" stroke-width="2" width="31" x="440" y="249"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="456" y="265">+1</text>
-      <circ-port height="8" pin="330,430" width="8" x="436" y="256"/>
-      <circ-port height="10" pin="530,440" width="10" x="465" y="255"/>
-      <circ-anchor facing="east" height="6" width="6" x="467" y="257"/>
+      <rect fill="#ffff99" height="25" stroke="#000000" stroke-width="2" width="31" x="130" y="159"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="146" y="175">+1</text>
+      <circ-port height="8" pin="330,430" width="8" x="126" y="166"/>
+      <circ-port height="10" pin="530,440" width="10" x="155" y="165"/>
+      <circ-anchor facing="east" height="6" width="6" x="157" y="167"/>
     </appear>
     <wire from="(330,430)" to="(390,430)"/>
     <wire from="(380,450)" to="(380,470)"/>
@@ -135,13 +135,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(410,400)" to="(510,400)"/>
     <wire from="(430,440)" to="(530,440)"/>
     <wire from="(370,470)" to="(370,510)"/>
-    <comp lib="0" loc="(330,430)" name="Pin">
-      <a name="width" val="20"/>
-      <a name="label" val="Initial_Pc"/>
-    </comp>
-    <comp lib="3" loc="(430,440)" name="Adder">
-      <a name="width" val="20"/>
-    </comp>
     <comp lib="0" loc="(530,440)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -151,26 +144,34 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(510,400)" name="Ground">
       <a name="facing" val="east"/>
     </comp>
+    <comp lib="3" loc="(430,440)" name="Adder">
+      <a name="width" val="20"/>
+    </comp>
+    <comp lib="0" loc="(330,430)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="label" val="Initial_Pc"/>
+    </comp>
     <comp lib="0" loc="(370,510)" name="Constant">
       <a name="width" val="20"/>
     </comp>
   </circuit>
   <circuit name="Jump">
     <a name="circuit" val="Jump"/>
-    <a name="clabel" val="Jump Unit"/>
+    <a name="clabel" val=""/>
     <a name="clabelup" val="north"/>
     <a name="clabelfont" val="SansSerif bold 18"/>
     <appear>
-      <rect fill="#ffffff" height="147" stroke="#000000" stroke-width="2" width="111" x="250" y="222"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="276" y="331">Imm16</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="271" y="364">Rs1</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="327" y="265">Next_Pc</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="267" y="257">Pc</text>
-      <circ-port height="8" pin="150,330" width="8" x="246" y="326"/>
-      <circ-port height="8" pin="190,450" width="8" x="246" y="356"/>
-      <circ-port height="10" pin="480,340" width="10" x="355" y="255"/>
-      <circ-port height="8" pin="360,190" width="8" x="246" y="246"/>
-      <circ-anchor facing="east" height="6" width="6" x="357" y="257"/>
+      <rect fill="#ffff8c" height="150" rx="10" ry="10" stroke="#000000" stroke-width="2" width="110" x="130" y="160"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="156" y="271">Imm16</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="151" y="304">Rs1</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="207" y="205">Next_Pc</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="145" y="195">Pc</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="185" y="241">Jump Unit</text>
+      <circ-port height="8" pin="150,330" width="8" x="126" y="266"/>
+      <circ-port height="8" pin="190,450" width="8" x="126" y="296"/>
+      <circ-port height="10" pin="480,340" width="10" x="235" y="195"/>
+      <circ-port height="8" pin="360,190" width="8" x="126" y="186"/>
+      <circ-anchor facing="east" height="6" width="6" x="237" y="197"/>
     </appear>
     <wire from="(310,300)" to="(400,300)"/>
     <wire from="(400,300)" to="(400,320)"/>
@@ -182,6 +183,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(150,330)" to="(190,330)"/>
     <wire from="(340,350)" to="(380,350)"/>
     <wire from="(190,450)" to="(290,450)"/>
+    <comp lib="3" loc="(420,340)" name="Adder">
+      <a name="width" val="20"/>
+    </comp>
+    <comp lib="0" loc="(310,300)" name="Ground">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="6" loc="(168,243)" name="Text">
+      <a name="text" val="JALR Rd,Rs1,imm16"/>
+    </comp>
     <comp lib="0" loc="(230,330)" name="Bit Extender">
       <a name="in_width" val="16"/>
       <a name="out_width" val="20"/>
@@ -189,29 +199,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(150,330)" name="Pin">
       <a name="width" val="16"/>
       <a name="label" val="Imm16"/>
-    </comp>
-    <comp lib="0" loc="(480,340)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="20"/>
-      <a name="label" val="Pc_jump"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(190,450)" name="Pin">
-      <a name="width" val="32"/>
-    </comp>
-    <comp lib="6" loc="(217,443)" name="Text">
-      <a name="text" val="Rs1"/>
-    </comp>
-    <comp lib="6" loc="(168,243)" name="Text">
-      <a name="text" val="JALR Rd,Rs1,imm16"/>
-    </comp>
-    <comp lib="0" loc="(360,190)" name="Pin">
-      <a name="width" val="20"/>
-      <a name="label" val="initial_pc"/>
-    </comp>
-    <comp lib="3" loc="(420,340)" name="Adder">
-      <a name="width" val="20"/>
     </comp>
     <comp lib="0" loc="(290,450)" name="Splitter">
       <a name="incoming" val="32"/>
@@ -247,26 +234,41 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit30" val="none"/>
       <a name="bit31" val="none"/>
     </comp>
-    <comp lib="0" loc="(310,300)" name="Ground">
+    <comp lib="6" loc="(217,443)" name="Text">
+      <a name="text" val="Rs1"/>
+    </comp>
+    <comp lib="0" loc="(190,450)" name="Pin">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(480,340)" name="Pin">
       <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="20"/>
+      <a name="label" val="Pc_jump"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(360,190)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="label" val="initial_pc"/>
     </comp>
   </circuit>
   <circuit name="Branch_pc">
     <a name="circuit" val="Branch_pc"/>
-    <a name="clabel" val="Branch Unit"/>
+    <a name="clabel" val=""/>
     <a name="clabelup" val="north"/>
     <a name="clabelfont" val="SansSerif bold 18"/>
     <appear>
-      <rect fill="#ffffff" height="138" stroke="#000000" stroke-width="2" width="151" x="230" y="162"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="256" y="294">ImmU</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="255" y="267">ImmL</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="247" y="196">PC</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="345" y="206">PC_Next</text>
-      <circ-port height="8" pin="270,40" width="8" x="226" y="256"/>
-      <circ-port height="8" pin="290,80" width="8" x="226" y="286"/>
-      <circ-port height="8" pin="290,160" width="8" x="226" y="186"/>
-      <circ-port height="10" pin="510,170" width="10" x="375" y="195"/>
-      <circ-anchor facing="east" height="6" width="6" x="377" y="197"/>
+      <rect fill="#ffff8c" height="130" rx="10" ry="10" stroke="#000000" width="140" x="30" y="100"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="56" y="224">ImmU</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="55" y="197">ImmL</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="47" y="126">PC</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="135" y="136">PC_Next</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="99" y="177">Branch Unit</text>
+      <circ-port height="8" pin="270,40" width="8" x="26" y="186"/>
+      <circ-port height="8" pin="290,80" width="8" x="26" y="216"/>
+      <circ-port height="8" pin="290,160" width="8" x="26" y="116"/>
+      <circ-port height="10" pin="510,170" width="10" x="165" y="125"/>
+      <circ-anchor facing="east" height="6" width="6" x="167" y="127"/>
     </appear>
     <wire from="(420,170)" to="(510,170)"/>
     <wire from="(180,220)" to="(340,220)"/>
@@ -284,17 +286,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(250,80)" to="(290,80)"/>
     <wire from="(340,180)" to="(380,180)"/>
     <wire from="(170,40)" to="(270,40)"/>
-    <comp lib="0" loc="(510,170)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="20"/>
-      <a name="label" val="Pc_Branch"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(290,160)" name="Pin">
-      <a name="width" val="20"/>
-      <a name="label" val="initial_pc"/>
-    </comp>
     <comp lib="0" loc="(150,60)" name="Splitter">
       <a name="incoming" val="16"/>
       <a name="bit1" val="0"/>
@@ -313,6 +304,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit14" val="1"/>
       <a name="bit15" val="1"/>
     </comp>
+    <comp lib="0" loc="(270,40)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="width" val="5"/>
+      <a name="label" val="ImmL"/>
+    </comp>
     <comp lib="0" loc="(400,110)" name="Ground">
       <a name="facing" val="north"/>
     </comp>
@@ -323,15 +319,21 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="3" loc="(420,170)" name="Adder">
       <a name="width" val="20"/>
     </comp>
-    <comp lib="0" loc="(270,40)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="width" val="5"/>
-      <a name="label" val="ImmL"/>
+    <comp lib="0" loc="(290,160)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="label" val="initial_pc"/>
     </comp>
     <comp lib="0" loc="(290,80)" name="Pin">
       <a name="facing" val="west"/>
       <a name="width" val="11"/>
       <a name="label" val="ImmU"/>
+    </comp>
+    <comp lib="0" loc="(510,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="20"/>
+      <a name="label" val="Pc_Branch"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
 </project>

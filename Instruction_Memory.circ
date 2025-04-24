@@ -117,32 +117,34 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   </toolbar>
   <circuit name="Instruction Memory">
     <a name="circuit" val="Instruction Memory"/>
-    <a name="clabel" val="Instruction Memory"/>
+    <a name="clabel" val=""/>
     <a name="clabelup" val="north"/>
     <a name="clabelfont" val="SansSerif bold 18"/>
     <appear>
-      <rect fill="#ffffff" height="176" stroke="#000000" stroke-width="2" width="198" x="201" y="134"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="219" y="173">Pc</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="367" y="204">Data_out</text>
-      <circ-port height="8" pin="160,200" width="8" x="196" y="166"/>
-      <circ-port height="10" pin="450,200" width="10" x="395" y="195"/>
-      <circ-anchor facing="east" height="6" width="6" x="397" y="197"/>
+      <rect fill="#ccccff" height="221" stroke="#000000" stroke-width="2" width="161" x="50" y="50"/>
+      <text font-family="SansSerif" font-size="12" font-weight="bold" text-anchor="middle" x="65" y="194">Pc</text>
+      <text font-family="SansSerif" font-size="12" font-weight="bold" text-anchor="middle" x="174" y="224">Data_Out</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="130" y="121">Instruction</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="129" y="155">Memory</text>
+      <circ-port height="8" pin="160,200" width="8" x="46" y="186"/>
+      <circ-port height="10" pin="450,200" width="10" x="205" y="215"/>
+      <circ-anchor facing="east" height="6" width="6" x="127" y="157"/>
     </appear>
     <wire from="(160,200)" to="(240,200)"/>
     <wire from="(380,200)" to="(450,200)"/>
+    <comp lib="6" loc="(311,150)" name="Text">
+      <a name="text" val="INSTRUCTION MEMORY"/>
+    </comp>
+    <comp lib="0" loc="(160,200)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="label" val="PC"/>
+    </comp>
     <comp lib="0" loc="(450,200)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="32"/>
       <a name="label" val="32-bit iinstruction"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(160,200)" name="Pin">
-      <a name="width" val="20"/>
-      <a name="label" val="PC"/>
-    </comp>
-    <comp lib="6" loc="(311,150)" name="Text">
-      <a name="text" val="INSTRUCTION MEMORY"/>
     </comp>
     <comp lib="4" loc="(380,200)" name="ROM">
       <a name="addrWidth" val="20"/>
