@@ -128,7 +128,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="129" y="155">Memory</text>
       <circ-port height="8" pin="160,200" width="8" x="46" y="186"/>
       <circ-port height="10" pin="450,200" width="10" x="205" y="215"/>
-      <circ-anchor facing="east" height="6" width="6" x="127" y="157"/>
+      <circ-anchor facing="east" height="6" width="6" x="207" y="217"/>
     </appear>
     <wire from="(160,200)" to="(240,200)"/>
     <wire from="(380,200)" to="(450,200)"/>
