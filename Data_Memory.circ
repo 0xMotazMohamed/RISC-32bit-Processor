@@ -149,9 +149,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(380,270)" to="(380,330)"/>
     <wire from="(440,270)" to="(440,330)"/>
     <wire from="(260,240)" to="(300,240)"/>
-    <comp lib="0" loc="(310,370)" name="Pin">
-      <a name="label" val="Clock"/>
+    <comp lib="0" loc="(250,160)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Address"/>
     </comp>
+    <comp lib="0" loc="(350,350)" name="Constant"/>
     <comp lib="0" loc="(300,240)" name="Splitter">
       <a name="incoming" val="32"/>
       <a name="appear" val="center"/>
@@ -187,26 +190,17 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit30" val="1"/>
       <a name="bit31" val="1"/>
     </comp>
-    <comp lib="0" loc="(250,260)" name="Pin">
-      <a name="width" val="32"/>
-      <a name="label" val="Data_In"/>
+    <comp lib="0" loc="(550,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="Memory_Read"/>
     </comp>
     <comp lib="0" loc="(300,330)" name="Pin">
       <a name="label" val="Memory_Write"/>
     </comp>
-    <comp lib="0" loc="(250,160)" name="Pin">
+    <comp lib="0" loc="(250,260)" name="Pin">
       <a name="width" val="32"/>
-      <a name="label" val="Address"/>
-    </comp>
-    <comp lib="0" loc="(570,230)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="Data_Out"/>
-    </comp>
-    <comp lib="0" loc="(550,330)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="label" val="Memory_Read"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Data_In"/>
     </comp>
     <comp lib="4" loc="(490,230)" name="RAM">
       <a name="addrWidth" val="20"/>
@@ -214,6 +208,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bus" val="separate"/>
     </comp>
     <comp lib="6" loc="(129,124)" name="Text"/>
-    <comp lib="0" loc="(350,350)" name="Constant"/>
+    <comp lib="0" loc="(310,370)" name="Pin">
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="0" loc="(570,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Data_Out"/>
+    </comp>
   </circuit>
 </project>
