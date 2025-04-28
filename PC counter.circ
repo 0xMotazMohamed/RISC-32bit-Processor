@@ -135,8 +135,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(410,400)" to="(510,400)"/>
     <wire from="(430,440)" to="(530,440)"/>
     <wire from="(370,470)" to="(370,510)"/>
+    <comp lib="3" loc="(430,440)" name="Adder">
+      <a name="width" val="20"/>
+    </comp>
     <comp lib="0" loc="(370,510)" name="Constant">
       <a name="width" val="20"/>
+    </comp>
+    <comp lib="0" loc="(330,430)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="label" val="Initial_Pc"/>
     </comp>
     <comp lib="0" loc="(530,440)" name="Pin">
       <a name="facing" val="west"/>
@@ -144,15 +151,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="20"/>
       <a name="label" val="OutPcPlus1"/>
     </comp>
-    <comp lib="3" loc="(430,440)" name="Adder">
-      <a name="width" val="20"/>
-    </comp>
     <comp lib="0" loc="(510,400)" name="Ground">
       <a name="facing" val="east"/>
-    </comp>
-    <comp lib="0" loc="(330,430)" name="Pin">
-      <a name="width" val="20"/>
-      <a name="label" val="Initial_Pc"/>
     </comp>
   </circuit>
   <circuit name="Jump">
@@ -165,7 +165,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="154" y="275">Imm16</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="151" y="304">Rs1</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="207" y="205">Next_Pc</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="145" y="195">Pc</text>
       <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="185" y="241">Jump Unit</text>
       <circ-port height="8" pin="150,330" width="8" x="126" y="266"/>
       <circ-port height="10" pin="480,340" width="10" x="235" y="195"/>
@@ -181,23 +180,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(150,330)" to="(190,330)"/>
     <wire from="(340,350)" to="(380,350)"/>
     <wire from="(190,450)" to="(290,450)"/>
-    <comp lib="3" loc="(420,340)" name="Adder">
-      <a name="width" val="20"/>
-    </comp>
-    <comp lib="0" loc="(190,450)" name="Pin">
-      <a name="width" val="32"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="6" loc="(217,443)" name="Text">
-      <a name="text" val="Rs1"/>
-    </comp>
-    <comp lib="0" loc="(310,300)" name="Ground">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="0" loc="(230,330)" name="Bit Extender">
-      <a name="in_width" val="16"/>
-      <a name="out_width" val="20"/>
-    </comp>
     <comp lib="0" loc="(290,450)" name="Splitter">
       <a name="incoming" val="32"/>
       <a name="bit1" val="0"/>
@@ -232,6 +214,28 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit30" val="none"/>
       <a name="bit31" val="none"/>
     </comp>
+    <comp lib="0" loc="(190,450)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(230,330)" name="Bit Extender">
+      <a name="in_width" val="16"/>
+      <a name="out_width" val="20"/>
+    </comp>
+    <comp lib="3" loc="(420,340)" name="Adder">
+      <a name="width" val="20"/>
+    </comp>
+    <comp lib="6" loc="(217,443)" name="Text">
+      <a name="text" val="Rs1"/>
+    </comp>
+    <comp lib="0" loc="(150,330)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Imm16"/>
+    </comp>
+    <comp lib="0" loc="(310,300)" name="Ground">
+      <a name="facing" val="west"/>
+    </comp>
     <comp lib="0" loc="(480,340)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -239,11 +243,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="Pc_jump"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(150,330)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Imm16"/>
     </comp>
   </circuit>
   <circuit name="Branch_pc">
@@ -285,20 +284,28 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="5"/>
       <a name="label" val="ImmL"/>
     </comp>
-    <comp lib="0" loc="(400,110)" name="Ground">
-      <a name="facing" val="north"/>
-    </comp>
     <comp lib="0" loc="(290,160)" name="Pin">
       <a name="width" val="20"/>
       <a name="label" val="initial_pc"/>
+    </comp>
+    <comp lib="3" loc="(420,170)" name="Adder">
+      <a name="width" val="20"/>
     </comp>
     <comp lib="0" loc="(130,110)" name="Bit Extender">
       <a name="in_width" val="16"/>
       <a name="out_width" val="20"/>
       <a name="type" val="sign"/>
     </comp>
-    <comp lib="3" loc="(420,170)" name="Adder">
+    <comp lib="0" loc="(510,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
       <a name="width" val="20"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Pc_Branch"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(400,110)" name="Ground">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="0" loc="(150,60)" name="Splitter">
       <a name="incoming" val="16"/>
@@ -322,14 +329,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="facing" val="west"/>
       <a name="width" val="11"/>
       <a name="label" val="ImmU"/>
-    </comp>
-    <comp lib="0" loc="(510,170)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="20"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Pc_Branch"/>
-      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
 </project>
