@@ -132,12 +132,17 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </appear>
     <wire from="(160,200)" to="(240,200)"/>
     <wire from="(380,200)" to="(450,200)"/>
-    <comp lib="6" loc="(311,150)" name="Text">
-      <a name="text" val="INSTRUCTION MEMORY"/>
-    </comp>
-    <comp lib="0" loc="(160,200)" name="Pin">
-      <a name="width" val="20"/>
-      <a name="label" val="PC"/>
+    <comp lib="4" loc="(380,200)" name="ROM">
+      <a name="addrWidth" val="20"/>
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 20 32
+1004d 10011 10051 a008d 20091 128900cd 45ac00ce 230711
+500010d 7342010e 240751 384004d 1234020d 5678020e 140945 12508c0
+834100 50 10090 200d0 a42100 841100 c31180 30d2
+820880 ffe00712 40011 1a31280 245380 4453c0 57684 2501cf
+4545024d 4545028d 95095 ffff0dcb 12 1431140 50 50890
+608d0 1631100 40011 380f
+</a>
     </comp>
     <comp lib="0" loc="(450,200)" name="Pin">
       <a name="facing" val="west"/>
@@ -146,12 +151,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="32-bit iinstruction"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="4" loc="(380,200)" name="ROM">
-      <a name="addrWidth" val="20"/>
-      <a name="dataWidth" val="32"/>
-      <a name="contents">addr/data: 20 32
-1100011
-</a>
+    <comp lib="6" loc="(311,150)" name="Text">
+      <a name="text" val="INSTRUCTION MEMORY"/>
+    </comp>
+    <comp lib="0" loc="(160,200)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="label" val="PC"/>
     </comp>
   </circuit>
 </project>
