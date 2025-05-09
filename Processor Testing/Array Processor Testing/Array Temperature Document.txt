@@ -1,0 +1,69 @@
+Array Test Code: Temperature Monitoring System
+5.4.1 Program Objective
+This test program simulates a Temperature Monitoring System using our custom RISC instruction set. The goal is to:
+•	Initialize an array with temperature values.
+•	Calculate the average temperature.
+•	Compare the average to a threshold.
+•	Store both the average and an alert flag in memory.
+This program involves procedures that interact with arrays and control logic, as required by the project specification.
+5.4.2 Program Structure
+A. Initialization
+SET   R3, 8            # Number of readings
+SET   R4, 20           # Starting temperature
+SET   R5, 5            # Step increment
+SET   R6, 4            # Word size (bytes)
+SET   R1, 0x2000       # Base address for array
+SET   R2, 0            # Loop counter
+Initial values are configured for storing 8 readings starting from 20°C, with a 5°C increment, into memory.
+
+B. Filling the Temperature Array
+Loop_fill:
+SW    R4, 0(R1)        
+ADD   R1, R1, R6       
+ADD   R4, R4, R5       
+ADDI  R2, R2, 1        
+SLTI  R7, R2, 8        
+BNE   R7, R0, Loop_fill
+This loop fills memory addresses from 0x2000 to 0x201C with the values:
+20, 25, 30, 35, 40, 45, 50, 55
+C. Summing the Temperature Values
+SET   R1, 0x2000       # Reset base address
+SET   R2, 0            # Reset loop counter
+SET   R7, 0            # Sum accumulator
+
+loop_sum:
+LW    R4, 0(R1)        
+ADD   R7, R7, R4       
+ADD   R1, R1, R6       
+ADDI  R2, R2, 1        
+SLTI  R8, R2, 8        
+BNE   R8, R0, loop_sum
+This section calculates the sum of the temperature values:
+Sum = 20 + 25 + ... + 55 = 300
+D. Average Calculation and Storage
+SRLI  R8, R7, 3        # Divide by 8 using shift
+SET   R9, 0x3000       
+SW    R8, 0(R9)        
+The sum is divided by 8 using logical right shift (>> 3), resulting in the average value 37, which is stored at memory address 0x3000.
+E. Threshold Comparison and Alert Flag
+SET   R10, 50          
+SLT   R11, R10, R8     
+SET   R12, 0x3004      
+SW    R11, 0(R12)      
+This block compares the average temperature to a threshold value of 50°C.
+If the average exceeds the threshold, an alert flag is raised (R11 = 1), otherwise 0.
+In this case:
+37 < 50 ⇒ Alert = 0 → Stored at 0x3004.
+5.4.3 Memory Output Summary
+Address	Description	Value Stored
+0x2000–0x201C	Temperature readings	20, 25, ..., 55
+0x3000	Average temperature	37
+0x3004	Alert flag	0
+
+5.4.4 Machine Code Representation
+The program was assembled into binary using a custom Python-based assembler. Below is the machine code loaded into instruction memory:
+000800CD 0014010D 0005014D 0004018D 2000004D 0000008D 00040811
+00860840 00852100 00011085 000811C6 FFE03ED3 2000004D 0000008D
+000001CD 00000910 008439C0 00860840 00011085 00081206 FFE046D3
+00033A02 3000024D 00084811 0032028D 00C852C0 3004030D 000B6011
+Each line represents a 32-bit instruction in hexadecimal, following the project’s instruction format.

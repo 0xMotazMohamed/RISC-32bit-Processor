@@ -1,0 +1,33 @@
+SET   R3, 8            # R3 = 0x0008 (8 in hexadecimal)
+SET   R4, 20           # R4 = 0x0014 (20 in hexadecimal)
+SET   R5, 5            # R5 = 0x0005 (5 in hexadecimal)
+SET   R6, 4            # R6 = 0x0004 (4 in hexadecimal)
+SET   R1, 0x2000       # R1 = 0x2000 (base address of temperature array)
+SET   R2, 0            # R2 = 0x0000 (loop counter, i = 0)
+Loop_fill: 
+SW    R4, 0(R1)           # Mem[R1] = R4 (store temperature value at current address)
+ADD   R1, R1, R6       # R1 = R1 + 0x0004 (move to next memory word)
+ADD   R4, R4, R5       # R4 = R4 + 0x0005 (increase temperature)
+ADDI  R2, R2, 1        # R2 = R2 + 1 (increment loop counter)
+SLTI  R7, R2, 8        # R7 = 1 if R2 < 0x0008 (loop condition)
+BNE   R7, R0, Loop_fill # if R7 != 0, jump to loop_fill (continue storing values)
+Reset: 
+SET   R1, 0x2000       # R1 = 0x2000 (reset to base address of temperature array)
+SET   R2, 0            # R2 = 0x0000 (reset loop counter to 0)
+SET   R7, 0            # R7 = 0x0000 (sum = 0)
+loop_sum: 
+LW    R4, 0(R1)           # R4 = Mem[R1] (load temperature value)
+ADD   R7, R7, R4       # R7 = R7 + R4 (accumulate sum)
+ADD   R1, R1, R6       # R1 = R1 + 0x0004 (move to next memory word)
+ADDI  R2, R2, 1        # R2 = R2 + 1 (increment loop counter)
+SLTI  R8, R2, 8        # R8 = 1 if R2 < 0x0008 (loop condition)
+BNE   R8, R0, loop_sum # if R8 != 0, jump to loop_sum (continue summing values)
+Average_calculation: 
+SRLI  R8, R7, 3        # R8 = R7 >> 3 (divide sum by 8 to compute average)
+SET   R9, 0x3000       # R9 = 0x3000 (memory address to store average)
+SW    R8, 0(R9)           # Mem[R9] = R8 (store average value in memory)
+Temperature Alert: 
+SET   R10, 50          # R10 = 0x0032 (50 in hexadecimal)
+SLT   R11, R10, R8     # R11 = 1 if R10 < R8 (i.e., if average > threshold)
+SET   R12, 0x3004      # R12 = 0x3004 (memory address to store alert flag)
+SW    R11, 0(R12)         # Mem[R12] = R11 (store alert flag: 1 if high)

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="fanout" val="1"/>
+      <a name="incoming" val="32"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+      <a name="bit8" val="0"/>
+      <a name="bit9" val="0"/>
+      <a name="bit10" val="0"/>
+      <a name="bit11" val="0"/>
+      <a name="bit12" val="0"/>
+      <a name="bit13" val="0"/>
+      <a name="bit14" val="0"/>
+      <a name="bit15" val="0"/>
+      <a name="bit16" val="0"/>
+      <a name="bit17" val="0"/>
+      <a name="bit18" val="0"/>
+      <a name="bit19" val="0"/>
+      <a name="bit20" val="0"/>
+      <a name="bit21" val="0"/>
+      <a name="bit22" val="0"/>
+      <a name="bit23" val="0"/>
+      <a name="bit24" val="0"/>
+      <a name="bit25" val="0"/>
+      <a name="bit26" val="0"/>
+      <a name="bit27" val="0"/>
+      <a name="bit28" val="0"/>
+      <a name="bit29" val="0"/>
+      <a name="bit30" val="0"/>
+      <a name="bit31" val="0"/>
+    </tool>
+    <tool name="Pin">
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool name="Probe">
+      <a name="facing" val="north"/>
+      <a name="radix" val="10signed"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="ADD"/>
+    </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="width" val="4"/>
+      <a name="value" val="0x0"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="Extender"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="Extender">
+    <a name="circuit" val="Extender"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <rect fill="#ffff8c" height="100" stroke="#000000" stroke-width="2" width="90" x="30" y="30"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="55" y="64">Imm16</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="51" y="103">ImmU</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="50" y="84">ImmL</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="50" y="126">S</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="99" y="126">Ext</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="91" y="82">Extender</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="95" y="54">Ext-Pc</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="51" y="45">Pc+1</text>
+      <circ-port height="8" pin="480,290" width="8" x="96" y="126"/>
+      <circ-port height="10" pin="540,240" width="10" x="115" y="75"/>
+      <circ-port height="8" pin="230,160" width="8" x="26" y="56"/>
+      <circ-port height="8" pin="280,320" width="8" x="46" y="126"/>
+      <circ-port height="8" pin="160,340" width="8" x="26" y="96"/>
+      <circ-port height="8" pin="150,260" width="8" x="26" y="76"/>
+      <circ-port height="8" pin="260,100" width="8" x="26" y="36"/>
+      <circ-port height="10" pin="540,130" width="10" x="115" y="45"/>
+      <circ-anchor facing="east" height="6" width="6" x="117" y="77"/>
+    </appear>
+    <wire from="(270,220)" to="(270,290)"/>
+    <wire from="(330,130)" to="(380,130)"/>
+    <wire from="(450,250)" to="(450,260)"/>
+    <wire from="(420,130)" to="(540,130)"/>
+    <wire from="(450,210)" to="(450,230)"/>
+    <wire from="(160,260)" to="(160,280)"/>
+    <wire from="(490,260)" to="(490,290)"/>
+    <wire from="(230,160)" to="(270,160)"/>
+    <wire from="(330,100)" to="(330,130)"/>
+    <wire from="(300,230)" to="(300,320)"/>
+    <wire from="(420,260)" to="(450,260)"/>
+    <wire from="(450,250)" to="(480,250)"/>
+    <wire from="(420,210)" to="(450,210)"/>
+    <wire from="(450,230)" to="(480,230)"/>
+    <wire from="(510,240)" to="(540,240)"/>
+    <wire from="(320,210)" to="(350,210)"/>
+    <wire from="(350,260)" to="(380,260)"/>
+    <wire from="(350,210)" to="(380,210)"/>
+    <wire from="(270,200)" to="(290,200)"/>
+    <wire from="(270,220)" to="(290,220)"/>
+    <wire from="(280,320)" to="(300,320)"/>
+    <wire from="(270,160)" to="(270,200)"/>
+    <wire from="(160,280)" to="(180,280)"/>
+    <wire from="(160,340)" to="(180,340)"/>
+    <wire from="(180,290)" to="(180,340)"/>
+    <wire from="(480,290)" to="(490,290)"/>
+    <wire from="(150,260)" to="(160,260)"/>
+    <wire from="(350,210)" to="(350,260)"/>
+    <wire from="(200,290)" to="(270,290)"/>
+    <wire from="(260,100)" to="(330,100)"/>
+    <comp lib="0" loc="(150,260)" name="Pin">
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="ImmL"/>
+    </comp>
+    <comp lib="2" loc="(320,210)" name="Multiplexer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(230,160)" name="Pin">
+      <a name="width" val="16"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Imm16"/>
+    </comp>
+    <comp lib="0" loc="(160,340)" name="Pin">
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="ImmU"/>
+    </comp>
+    <comp lib="0" loc="(280,320)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="ImmSelect"/>
+    </comp>
+    <comp lib="0" loc="(420,260)" name="Bit Extender">
+      <a name="in_width" val="16"/>
+      <a name="out_width" val="32"/>
+      <a name="type" val="sign"/>
+    </comp>
+    <comp lib="0" loc="(480,290)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Extender_Op"/>
+    </comp>
+    <comp lib="0" loc="(200,290)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="incoming" val="16"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="bit10" val="1"/>
+      <a name="bit11" val="1"/>
+      <a name="bit12" val="1"/>
+      <a name="bit13" val="1"/>
+      <a name="bit14" val="1"/>
+      <a name="bit15" val="1"/>
+    </comp>
+    <comp lib="0" loc="(540,130)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="PC_Extended"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(260,100)" name="Pin">
+      <a name="width" val="20"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="PC+1"/>
+    </comp>
+    <comp lib="2" loc="(510,240)" name="Multiplexer">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(540,240)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Immediate"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(420,210)" name="Bit Extender">
+      <a name="in_width" val="16"/>
+      <a name="out_width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(420,130)" name="Bit Extender">
+      <a name="in_width" val="20"/>
+      <a name="out_width" val="32"/>
+    </comp>
+  </circuit>
+</project>
