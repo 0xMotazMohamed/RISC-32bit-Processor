@@ -155,14 +155,12 @@ ADDI R2, R1, 5
 SW R2, 0(R0)
 ```
 
-Use our Python assembler to convert `.asm` to `.bin`.
-
 ---
 
 # **Download**
 
 - 🎞 [Phase 1 Video](https://drive.google.com/file/d/1zgXdttJMgJP_WHMIrIYan-U5UsAn0INm/view)  
-- 📁 [Full Project Folder](https://drive.google.com/drive/folders/1QQcOcezXfJSpcG7dwhKZvbHQ2UYC4hIL?usp=sharing)  
+- 📁 [Phase 2 Video & Array Test](https://drive.google.com/drive/folders/1QQcOcezXfJSpcG7dwhKZvbHQ2UYC4hIL?usp=sharing)  
 - 📦 [GitHub Repository](https://github.com/0xMotazMohamed/RISC-32bit-Processor)
 
 ---
